@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Users Page";
+}
+
+
+
+<form>
+    <div class="form-group">
+        <label for="">Username</label>
+        <input id="UsernameInput" type="text" class="form-control" aria-describedby="" placeholder="Username">
+    </div>
+
+    <div class="form-group">
+        <label for="">Password</label>
+        <input id="PasswordInput" type="text" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="">UserTypeId</label>
+        <input id="UserTypeIdInput" type="text" class="form-control" placeholder="UserTypeId">
+    </div>
+    <button type="submit" onclick="Save()" class="btn btn-primary">Save</button>
+    <button type="submit" onclick="Reset()" class="btn btn-primary">Reset</button>
+</form>
+<table id="tblUser">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>UserTypeID</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript">var _users = [];
+    $(document).ready(function () {
+        LoadUsers();
+    });
+
+
+    function LoadUsers() {
+        Reset();
+        $.get("../Users/GetUser", function (users) {
+            _users = users;
+            $.map(users, function (user) {
+                var tempStr = "<tr>";
+                tempStr += "<td>" + user.id + "</td>";
+                tempStr += "<td>" + user.username + "</td>";
+                tempStr += "<td>" + user.password + "</td>";
+                tempStr += "<td>" + user.userTypeID + "</td>";
+                tempStr += "<td><button class='btn btn - primary' onclick='Edit(\"" + user.id + "\")'>Edit</button><button class='btn btn - primary' onclick='Delete(\"" + user.id + "\")'>Delete</button></td>";
+                tempStr += "</tr>";
+                $("#tblUser tbody").append(tempStr);
+            })
+        })
+    }
+
+    function Reset() {
+        _users = [];
+        $("#tblUser tbody tr").remove();
+        $(".form-control").val("");
+    }
+    function Save() {
+        var user = {
+            Id: $.trim($("#UserIDInput").val()),
+            Username: $.trim($("#UsernameInput").val()),
+            Password: $.trim($("#PasswordInput").val()),
+            UserTypeID: $.trim($("#UserTypeIdInput").val())
+        };
+        $.post("../Users/SaveUser", user, function (user) {
+            LoadUsers();
+        });
+    }
+    function Edit(userId) {
+        var user = _users.find(x => x.id == userId);
+        $("#UserIDInput").val(user.id);
+        $("#UsernameInput").val(user.username);
+        $("#PasswordInput").val(user.password);
+        $("#UserTypeIdInput").val(user.userTypeID);
+    }
+    function Delete(userId) {
+        $.ajax({
+            url: "../Users/DeleteUser?userId=" + userId,
+            method: 'DELETE'
+        })
+            .done(function (data) {
+                alert(data);
+                LoadUsers();
+            });
+
+    }</script>
+
