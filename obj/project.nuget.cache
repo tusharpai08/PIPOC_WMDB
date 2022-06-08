@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "YLXc34n8pgPmqARKtjY+l5bRXtvgzSLIzboMmwK7PV+EhK0iUT+dfc2g7JMzyJWSWsHNpITR9cmsQRu+n4T4pQ==",
+  "success": true,
+  "projectFilePath": "/Users/tusharpai/Desktop/Coding Projects/PIPOC_WMDB/PIPOC_WMDB.csproj",
+  "expectedPackageFiles": [
+    "/Users/tusharpai/.nuget/packages/dnsclient/1.6.0/dnsclient.1.6.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/mongodb.bson/2.16.0/mongodb.bson.2.16.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/mongodb.driver/2.16.0/mongodb.driver.2.16.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/mongodb.driver.core/2.16.0/mongodb.driver.core.2.16.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/mongodb.libmongocrypt/1.5.2/mongodb.libmongocrypt.1.5.2.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512",
+    "/Users/tusharpai/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
